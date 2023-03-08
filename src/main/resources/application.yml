@@ -1,0 +1,6 @@
+server:
+  port: 60000
+
+generator:
+  save-path: E:/Temp/generator
+  jdbc-url-template: jdbc:mysql://%s/%s?useSSL=true&serverTimezone=UTC

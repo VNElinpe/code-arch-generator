@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Code generator</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+</head>
+<body>
+  <div class="container mt-3">
+    <form action="" class="row">
+      <div class="col-sm-8 offset-sm-2 mb-3 mt-3">
+        <h2 class="text-center">代码生成器</h2>
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="dbInstance" class="form-label">数据库实例:</label>
+        <input type="text" class="form-control" id="dbInstance" placeholder="ip:port" name="dbInstance">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="dbUser" class="form-label">数据库账号:</label>
+        <input type="text" class="form-control" id="dbUser" placeholder="username" name="dbUser">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="dbPwd" class="form-label">数据库密码:</label>
+        <input type="password" class="form-control" id="dbPwd" placeholder="password" name="dbPwd">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="dbName" class="form-label">数据库名:</label>
+        <input type="text" class="form-control" id="dbName" placeholder="database name" name="dbName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="includeTableName" class="form-label">包含表名(等于):</label>
+        <input type="text" class="form-control" id="includeTableName" placeholder="多个表名用英文逗号连接" name="includeTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="preffixTableName" class="form-label">包含表名(前缀):</label>
+        <input type="text" class="form-control" id="preffixTableName" placeholder="表名前缀" name="preffixTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="suffixTableName" class="form-label">包含表名(后缀):</label>
+        <input type="text" class="form-control" id="suffixTableName" placeholder="表名后缀" name="suffixTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="likeTableName" class="form-label">包含表名(like):</label>
+        <input type="text" class="form-control" id="likeTableName" placeholder="表名关键字" name="likeTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="excludeTableName" class="form-label">排除表名(等于):</label>
+        <input type="text" class="form-control" id="excludeTableName" placeholder="多个表名用英文逗号连接" name="excludeTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="unlikeTableName" class="form-label">排除表名(like):</label>
+        <input type="text" class="form-control" id="unlikeTableName" placeholder="表名关键字" name="unlikeTableName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="packageName" class="form-label">包路径:</label>
+        <input type="text" class="form-control" id="packageName" placeholder="例如: com.example" name="packageName">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="mapperPath" class="form-label">Mapper文件路径:</label>
+        <input type="text" class="form-control" id="mapperPath" placeholder="mapper文件的保存路径" name="mapperPath">
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <label for="author" class="form-label">作者:</label>
+        <input type="text" class="form-control" id="author" placeholder="作者" name="author">
+      </div>
+      <div class="form-check form-switch col-sm-8 offset-sm-2 mb-3">
+        <div class="row">
+          <div class="col-sm-2 offset-sm-1">
+            <input class="form-check-input" type="checkbox" id="useLombok" name="useLombok" value="no">
+            <label class="form-check-label" for="useLombok">使用Lombok</label>
+          </div>
+          <div class="col-sm-2 offset-sm-1">
+            <input class="form-check-input" type="checkbox" id="useSwagger" name="useSwagger" value="no">
+            <label class="form-check-label" for="useSwagger">使用Swagger</label>
+          </div>
+          <div class="col-sm-2 offset-sm-1">
+            <select class="form-select" id="dateType" name="dateType">
+              <option>java.util.*</option>
+              <option>java.sql.*</option>
+              <option selected>java.time.*</option>
+            </select>
+          </div>
+          <div class="col-sm-2 offset-sm-1">
+            <select class="form-select" id="templateType" name="templateType">
+              <option selected>mybatis</option>
+              <option>mybatis-plus</option>
+              <option>jpa</option>
+            </select>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-sm-8 offset-sm-2 mb-3">
+        <button type="submit" class="btn btn-primary float-end">生成代码</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
